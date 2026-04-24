@@ -1,15 +1,18 @@
+const carregarComponente = async(caminho, container) =>{
+    try{
 
+        const resposta = await fetch(caminho);
 
-try{
+        if(!resposta.ok){
+            throw new Error('Error ao carregar componente')
+        }
 
+        const html = await resposta.text();
 
+        container.innerHTML = html;
 
-}catch(erro){
+    }catch(erro){
+        console.error(erro)
 
-    let text = `
-    <strong> Nome do erro:</strong> ${erro.name} <br />
-    <strong> Mensagem: </strong> ${erro.message} <br />
-    <strong> Stack: </strong> <span> ${erro.stack} <span/>
-    `;
-    document.body.innerHTML = text
+    };                                        
 };
