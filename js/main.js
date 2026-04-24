@@ -27,7 +27,7 @@ const iniciarLinks = () => {
         link.addEventListener('click', async (event)=>{
             event.preventDefault();
 
-            const pagina = link.databaset.link;
+            const pagina = link.dataset.link;
 
             const menu = document.querySelector('[data-menu]')
             const botao = document.querySelector('.menu__botao')

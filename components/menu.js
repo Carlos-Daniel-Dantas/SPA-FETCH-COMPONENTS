@@ -11,7 +11,7 @@ export const iniciarMenu = () =>{
             const ativo = menu.classList.contains('active');
 
             botao.setAttribute('aria-expanded', ativo);
-            botao.setAttribute('arial-label', ativo ? 'Fechar Menu': 'Abri Menu')
+            botao.setAttribute('arial-label', ativo ? 'Fechar Menu': 'Abrir Menu')
         };
 
         const fecharComEsc = (e) => {
