@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+    <script src="test.js" defer></script>
 <style>
         /* Estilização Global */
         body {
@@ -66,19 +68,23 @@
         }
 
     </style>
+    
 <body>
 
     <div class="container">
+
+
         <h1>Consulta de CEP</h1>
         
-        <input type="text" placeholder="14825154" maxlength="8">
+        <input class="input__cep" type="text" placeholder="14825154" maxlength="8">
         
         <div class="button-group">
             <button onclick="buscarComThen()">Buscar com .then()</button>
-            <button onclick="buscarComAsync()">Buscar com async/await</button>
+
+            <button onclick="buscarCmAsync()">Buscar com async/await</button>
         </div>
 
-        <div id="resultado" style="margin-top: 20px;"></div>
+        <div id="resultado__cep"></div>
         
     </div>
 
