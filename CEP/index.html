@@ -7,84 +7,21 @@
 </head>
 
     <script src="script-cep.js" defer></script>
-<style>
-        /* Estilização Global */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa; /* Fundo levemente cinza como no print */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Ocupa a tela inteira para centralizar */
-        }
-
-        /* Container Principal */
-        .container {
-            text-align: center;
-            width: 100%;
-            max-width: 500px;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            color: #1a1a1a;
-            margin-bottom: 20px;
-        }
-
-        /* Input de Texto */
-        input[type="text"] {
-            width: 250px;
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #767676;
-            border-radius: 2px;
-            margin-bottom: 25px;
-            outline: none;
-        }
-
-        /* Container dos Botões */
-        .button-group {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        /* Estilo dos Botões */
-        button {
-            background-color: #333333; /* Cor escura dos botões */
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #555555;
-        }
-
-    </style>
-
 <body>
 
     <div class="container">
-
 
         <h1>Consulta de CEP</h1>
         
         <input class="input__cep" type="text" placeholder="14825154" maxlength="8">
         
         <div class="button-group">
-            <button onclick="buscarComThen()">Buscar com .then()</button>
+            <button>Buscar com .then()</button>
 
-            <button onclick="buscarCmAsync()">Buscar com async/await</button>
+            <button>Buscar com async/await</button>
         </div>
 
-        <div id="resultado__cep"></div>
+        <div></div>
         
     </div>
 

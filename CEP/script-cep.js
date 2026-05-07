@@ -1,31 +1,48 @@
-document.querySelector('input__cep')
+const inputCep = document.querySelector('.input__cep')
+        const botaoThen = document.querySelector('.buscarComThen')
+        const botaoAsync = document.querySelector('.buscarComAsync')
 
-const url = `https://viacep.com.br/ws/01001000/json/`
-const consulta = fetch(url)
-console.log(consulta)
-consulta.then(resposta => {
+        const url = 'https://viacep.com.br/ws/01001000/json/'
+        const consulta = fetch(url);
 
-    if(!resposta.ok){
-        throw new Error('Erro na Requisição')
-    }
-    console.log(dados)
-})
+        function obterCep(){
+            return inputCep.value.trim()
+        }
 
-.then((resposta) => {
-    return resposta.json()
-})
+        botaoThen.addEventListener("click", () => {
+            const cep = obterCep
+            consulta
+            .then((response) => {
 
-.then((dados) => {
-    console.log(dados)
-})
-.catch((error) => {
-    console.warn(error)
-}
-)
+                if(!response.ok){
+                    throw new Error('Erro na Requisição.')
+                }
+                return response.json()
+            })
+            .then((dados) => {
 
-// function buscarComThen(cep) {
+                if(dados.erro){
+                    throw new Error('CEP inválido ou não encontrado.')
+                }
+                console.log(dados)
+            })
+            .catch((erro) => {
+                console.warn(erro.message)
+            });
+        })
 
-//     const CampoCep = document.getElementById('resultado__cep');
 
-    
-// }
+        //---------------------------------------------------------------------------------//
+
+
+        /* Criar uma requisição HTTP com fecth e async/await */
+        async function buscarCep(){
+            let resposta = await consulta;
+            console.log(resposta)
+            let dataObj = await resposta.json();
+            console.log(dataObj);
+        };
+
+        botaoAsync.addEventListener("click", function(){
+            buscarCep();
+        })
